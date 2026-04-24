@@ -1,5 +1,11 @@
 const display = document.querySelector("#display");
-const btn = document.querySelectorAll("button");
+let btns = document.querySelectorAll(".btn");
+
+btns.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        console.log(e.target.value);
+    });
+});
 
 const add = function(num1, num2) {
     return num1 + num2;
