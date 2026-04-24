@@ -1,3 +1,6 @@
+const display = document.querySelector("#display");
+const btn = document.querySelectorAll("button");
+
 const add = function(num1, num2) {
     return num1 + num2;
 }
