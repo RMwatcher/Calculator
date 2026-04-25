@@ -26,6 +26,20 @@ const divide = function(num1, num2) {
     return num1 / num2;
 }
 
+let submits = document.querySelectorAll(".operator");
+
+let operator;
+
+submits.forEach((submit) => {
+
+    submit.addEventListener("click", (e) => {
+        operator = e.target.value;
+        console.log(operator);
+    });
+});
+
+
+
 const operate = function(operator, num1, num2) {
     switch (operator) {
         case "add":
