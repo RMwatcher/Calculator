@@ -1,9 +1,12 @@
 const display = document.querySelector("#display");
 let btns = document.querySelectorAll(".btn");
 
+let num1, num2, operator;
+
 btns.forEach((button) => {
     button.addEventListener("click", (e) => {
         console.log(e.target.value);
+        num1 = e.target.value;
     });
 });
 
@@ -28,8 +31,6 @@ const divide = function(num1, num2) {
 
 let submits = document.querySelectorAll(".operator");
 
-let operator;
-
 submits.forEach((submit) => {
 
     submit.addEventListener("click", (e) => {
@@ -37,8 +38,6 @@ submits.forEach((submit) => {
         console.log(operator);
     });
 });
-
-
 
 const operate = function(operator, num1, num2) {
     switch (operator) {
