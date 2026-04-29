@@ -3,10 +3,13 @@ let btns = document.querySelectorAll(".btn");
 
 let num1, num2, operator;
 
+display.textContent = "";
+
 btns.forEach((button) => {
     button.addEventListener("click", (e) => {
         console.log(e.target.value);
         num1 = e.target.value;
+        display.textContent += e.target.value;
     });
 });
 
