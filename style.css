@@ -4,3 +4,12 @@ main {
     align-content: center;
     width: 105px;
 }
+
+#display {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    height: 20px;
+    width: 150px;
+    padding-left: 2px;
+}

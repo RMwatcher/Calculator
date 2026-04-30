@@ -3,13 +3,20 @@ let btns = document.querySelectorAll(".btn");
 
 let num1, num2, operator;
 
+let numbers = {
+    first: [0],
+    second: [0],
+    sign: ""
+};
+
 display.textContent = "";
 
 btns.forEach((button) => {
     button.addEventListener("click", (e) => {
         console.log(e.target.value);
-        num1 = e.target.value;
-        display.textContent += e.target.value;
+        numbers.first = Number.parseInt(e.target.value);
+        display.textContent += numbers.first;
+        console.log(numbers.first);
     });
 });
 
