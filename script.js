@@ -3,20 +3,21 @@ let btns = document.querySelectorAll(".btn");
 
 let num1, num2, operator;
 
-let numbers = {
-    first: [0],
-    second: [0],
-    sign: ""
-};
-
 display.textContent = "";
 
 btns.forEach((button) => {
     button.addEventListener("click", (e) => {
+        if (operator === "") {
+            num1 = Number.parseInt(e.target.value);
+            display.textContent += num1;
+            console.log(num1);
+        } else {
+            num2 = Number.parseInt(e.target.value);
+            display.textContent += num2;
+            console.log(num2);
+        }
         console.log(e.target.value);
-        numbers.first = Number.parseInt(e.target.value);
-        display.textContent += numbers.first;
-        console.log(numbers.first);
+        
     });
 });
 
@@ -45,6 +46,7 @@ submits.forEach((submit) => {
 
     submit.addEventListener("click", (e) => {
         operator = e.target.value;
+        display.textContent = "";
         console.log(operator);
     });
 });
