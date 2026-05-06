@@ -10,11 +10,11 @@ btns.forEach((button) => {
         if (operator === "") {
             num1 = Number.parseInt(e.target.value);
             display.textContent += num1;
-            console.log(num1);
+            console.log("num1 is " + num1);
         } else {
             num2 = Number.parseInt(e.target.value);
             display.textContent += num2;
-            console.log(num2);
+            console.log("num2 is " + num2);
         }
         console.log(e.target.value);
         
@@ -40,17 +40,6 @@ const divide = function(num1, num2) {
     return num1 / num2;
 }
 
-let submits = document.querySelectorAll(".operator");
-
-submits.forEach((submit) => {
-
-    submit.addEventListener("click", (e) => {
-        operator = e.target.value;
-        display.textContent = "";
-        console.log(operator);
-    });
-});
-
 const operate = function(operator, num1, num2) {
     switch (operator) {
         case "add":
@@ -62,6 +51,22 @@ const operate = function(operator, num1, num2) {
         case "divide":
             return divide(num1, num2);
         default:
-            break;
+            return null;
     }
-}
+};
+
+let submits = document.querySelectorAll(".operator");
+
+submits.forEach((submit) => {
+
+    submit.addEventListener("click", (e) => {
+        operator = e.target.value;
+        display.textContent = "";
+        console.log(operator);
+        operate(operator, num1, num2);
+    });
+});
+
+let equal = document.querySelector("#equals");
+
+equal.addEventListener("click", operate(operator, num1, num2));
