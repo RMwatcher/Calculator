@@ -17,31 +17,34 @@ btns.forEach((button) => {
             num2 += button.value;
             display.textContent = num2;
         }
-        
     });
 });
 
 const add = function(num1, num2) {
-    display.textContent = num1 + num2;
-    return num1 + num2;
+    let answer = num1 + num2;
+    display.textContent = answer;
+    return answer;
 }
 
 const subtract = function(num1, num2) {
-    display.textContent = num1 - num2;
-    return num1 - num2;
+    let answer = num1 - num2;
+    display.textContent = answer;
+    return answer;
 }
 
 const multiply = function(num1, num2) {
-    display.textContent = num1 * num2;
-    return num1 * num2;
+    let answer = num1 * num2;
+    display.textContent = answer;
+    return answer;
 }
 
 const divide = function(num1, num2) {
     if (num2 === 0) {
         alert("Division by zero is not allowed");
     }
-    display.textContent = num1 / num2;
-    return num1 / num2;
+    let answer = num1 / num2;
+    display.textContent = answer;
+    return answer;
 }
 
 const operate = function(operator, num1, num2) {
@@ -68,7 +71,6 @@ submits.forEach((submit) => {
     submit.addEventListener("click", () => {
         display.textContent = "";
         operator = submit.value;
-        console.log(operator);
         num2 = "";
     });
 });
