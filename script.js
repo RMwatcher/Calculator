@@ -12,12 +12,10 @@ btns.forEach((button) => {
     button.addEventListener("click", () => {
         if (operator === "") {
             num1 += button.value;
-            display.textContent = Number.parseInt(num1);
-            console.log("num1 is " + num1);
+            display.textContent = num1;
         } else {
             num2 += button.value;
-            display.textContent = Number.parseInt(num2);
-            console.log("num2 is " + num2);
+            display.textContent = num2;
         }
         
     });
@@ -47,6 +45,8 @@ const divide = function(num1, num2) {
 }
 
 const operate = function(operator, num1, num2) {
+    num1 = Number.parseInt(num1);
+    num2 = Number.parseInt(num2);
     switch (operator) {
         case "add":
             return add(num1, num2);
@@ -73,5 +73,4 @@ submits.forEach((submit) => {
     });
 });
 
-
-equal.addEventListener("click", operate(operator, num1, num2));
+equal.addEventListener("click", () => operate(operator, num1, num2));
