@@ -74,5 +74,5 @@ submits.forEach((submit) => {
         num2 = "";
     });
 });
-
+    
 equal.addEventListener("click", () => operate(operator, num1, num2));
