@@ -1,6 +1,7 @@
 const display = document.querySelector("#display");
 let btns = document.querySelectorAll(".btn");
 let equal = document.querySelector("#equals");
+let clear = document.querySelector("#clear");
 
 let num1 = "";
 let num2 = ""; 
@@ -69,10 +70,21 @@ let submits = document.querySelectorAll(".operator");
 submits.forEach((submit) => {
 
     submit.addEventListener("click", () => {
-        display.textContent = "";
         operator = submit.value;
         num2 = "";
     });
 });
     
-equal.addEventListener("click", () => operate(operator, num1, num2));
+equal.addEventListener("click", () => {
+    operate(operator, num1, num2)
+    num1 = "";
+    num2 = ""; 
+    operator = "";
+});
+
+clear.addEventListener("click", () => {
+    num1 = "";
+    num2 = ""; 
+    operator = "";
+    display.textContent = "";
+});
