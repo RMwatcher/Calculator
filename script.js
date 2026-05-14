@@ -6,6 +6,7 @@ let clear = document.querySelector("#clear");
 let num1 = "";
 let num2 = ""; 
 let operator = "";
+let newOperator = "";
 
 display.textContent = "";
 
@@ -75,6 +76,7 @@ submits.forEach((submit) => {
     });
 });
     
+// perform operations using given numbers and operator sign
 equal.addEventListener("click", () => {
     operate(operator, num1, num2)
     num1 = "";
@@ -82,6 +84,7 @@ equal.addEventListener("click", () => {
     operator = "";
 });
 
+// return all variables back to null
 clear.addEventListener("click", () => {
     num1 = "";
     num2 = ""; 
