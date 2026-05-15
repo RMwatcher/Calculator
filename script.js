@@ -7,6 +7,7 @@ let num1 = "";
 let num2 = ""; 
 let operator = "";
 let newOperator = "";
+const million = 1000000;
 
 display.textContent = "";
 
@@ -22,21 +23,22 @@ btns.forEach((button) => {
     });
 });
 
+// round all answers by one million
 const add = function(num1, num2) {
     let answer = num1 + num2;
-    display.textContent = answer;
+    display.textContent = Math.round(answer * million) / million;
     return answer;
 }
 
 const subtract = function(num1, num2) {
     let answer = num1 - num2;
-    display.textContent = answer;
+    display.textContent = Math.round(answer * million) / million;
     return answer;
 }
 
 const multiply = function(num1, num2) {
     let answer = num1 * num2;
-    display.textContent = answer;
+    display.textContent = Math.round(answer * million) / million;
     return answer;
 }
 
@@ -45,7 +47,7 @@ const divide = function(num1, num2) {
         alert("Division by zero is not allowed");
     }
     let answer = num1 / num2;
-    display.textContent = answer;
+    display.textContent = Math.round(answer * million) / million;
     return answer;
 }
 
@@ -70,18 +72,29 @@ let submits = document.querySelectorAll(".operator");
 
 submits.forEach((submit) => {
 
+    // checks to see if user click on a operator sign
     submit.addEventListener("click", () => {
-        operator = submit.value;
-        num2 = "";
+        if (operator === "") {
+            operator = submit.value;
+            num2 = "";
+        } else {
+            newOperator = operate(operator, num1, num2);
+            num1 = newOperator;
+            num2 = "";
+        }
     });
 });
     
 // perform operations using given numbers and operator sign
 equal.addEventListener("click", () => {
-    operate(operator, num1, num2)
-    num1 = "";
-    num2 = ""; 
-    operator = "";
+     if (operator === "" || (num1 === "" || num2 === "")) {
+        alert("Please input your numbers and/or operator sign.");
+    } else {
+        operate(operator, num1, num2)
+        num1 = "";
+        num2 = ""; 
+        operator = "";
+    }
 });
 
 // return all variables back to null
