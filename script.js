@@ -2,6 +2,7 @@ const display = document.querySelector("#display");
 let btns = document.querySelectorAll(".btn");
 let equal = document.querySelector("#equals");
 let clear = document.querySelector("#clear");
+let decimal = document.querySelector("#decimal");
 
 let num1 = "";
 let num2 = ""; 
@@ -10,6 +11,7 @@ let newOperator = "";
 const million = 1000000;
 
 display.textContent = "";
+decimal.disabled = false;
 
 btns.forEach((button) => {
     button.addEventListener("click", () => {
@@ -17,8 +19,13 @@ btns.forEach((button) => {
             num1 += button.value;
             display.textContent = num1;
         } else {
+            decimal.disabled = false;
             num2 += button.value;
             display.textContent = num2;
+        }
+        
+        if (button.value === ".") {
+            decimal.disabled = true;
         }
     });
 });
@@ -52,8 +59,8 @@ const divide = function(num1, num2) {
 }
 
 const operate = function(operator, num1, num2) {
-    num1 = Number.parseInt(num1);
-    num2 = Number.parseInt(num2);
+    num1 = Number.parseFloat(num1);
+    num2 = Number.parseFloat(num2);
     switch (operator) {
         case "add":
             return add(num1, num2);
@@ -82,6 +89,13 @@ submits.forEach((submit) => {
             num1 = newOperator;
             num2 = "";
         }
+        
+        if (Number.isNaN(num1)) {
+            num1 = "";
+            display.textContent = "";
+            alert("Invalid input. Please try again.");
+        }
+
     });
 });
     
@@ -94,6 +108,7 @@ equal.addEventListener("click", () => {
         num1 = "";
         num2 = ""; 
         operator = "";
+        decimal.disabled = false;
     }
 });
 
@@ -103,4 +118,5 @@ clear.addEventListener("click", () => {
     num2 = ""; 
     operator = "";
     display.textContent = "";
+    decimal.disabled = false;
 });
