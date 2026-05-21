@@ -78,7 +78,6 @@ const operate = function(operator, num1, num2) {
 let submits = document.querySelectorAll(".operator");
 
 submits.forEach((submit) => {
-
     // checks to see if user click on a operator sign
     submit.addEventListener("click", () => {
         if (operator === "") {
@@ -112,7 +111,7 @@ equal.addEventListener("click", () => {
     }
 });
 
-// return all variables back to null
+// reset all variables
 clear.addEventListener("click", () => {
     num1 = "";
     num2 = ""; 
