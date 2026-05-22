@@ -1,15 +1,73 @@
+@font-face {
+    font-family: 'Digital-7 Mono';
+    src: url('font/transfonter.org-20260522-012129/Digital-7Mono.woff2') format('woff2'),
+        url('font/transfonter.org-20260522-012129/Digital-7Mono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    font-size: 18px;
+}
+
+#clear {
+    flex: 1 1 0;
+}
+
+main button {
+    width: 90px;
+    height: 90px;
+    margin: 0 1px;
+    font-size: larger;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    width: 105px;
+    gap: 5px;
+    width: 395px;
+}
+
+main, header {
+    font-size: 2em;
 }
 
 #display {
+    font-family: "Digital-7 mono", monospace;
+    font-weight: 700;
+    letter-spacing: 4px;
     display: flex;
     align-items: center;
     border: 1px solid black;
-    height: 20px;
-    width: 150px;
-    padding-left: 2px;
+    height: 70px;
+    padding-left: 10px;
+}
+
+@media (width <= 500px) {
+    main {
+        width: 66%;
+    }
+
+    main, header {
+        font-size: 1.5em;
+    }
+
+    main button {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (width <= 376px) {
+    main {
+        width: 75%;
+    }
 }

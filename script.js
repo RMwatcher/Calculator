@@ -10,6 +10,10 @@ let operator = "";
 let newOperator = "";
 const million = 1000000;
 
+function roundToNearestMillion(text) {
+    return Math.round(text * million) / million;
+}
+
 display.textContent = "";
 decimal.disabled = false;
 
@@ -33,19 +37,19 @@ btns.forEach((button) => {
 // round all answers by one million
 const add = function(num1, num2) {
     let answer = num1 + num2;
-    display.textContent = Math.round(answer * million) / million;
+    display.textContent = roundToNearestMillion(answer);
     return answer;
 }
 
 const subtract = function(num1, num2) {
     let answer = num1 - num2;
-    display.textContent = Math.round(answer * million) / million;
+    display.textContent = roundToNearestMillion(answer);
     return answer;
 }
 
 const multiply = function(num1, num2) {
     let answer = num1 * num2;
-    display.textContent = Math.round(answer * million) / million;
+    display.textContent = roundToNearestMillion(answer);
     return answer;
 }
 
@@ -54,7 +58,7 @@ const divide = function(num1, num2) {
         alert("Division by zero is not allowed");
     }
     let answer = num1 / num2;
-    display.textContent = Math.round(answer * million) / million;
+    display.textContent = roundToNearestMillion(answer);
     return answer;
 }
 
