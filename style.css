@@ -7,8 +7,16 @@
     font-display: swap;
 }
 
+:root {
+    --text-color: #c5cdff;
+    --background-color: #282a36;
+    --secondary-color: #8991be;
+}
+
 body {
     display: flex;
+    background-color: var(--background-color);
+    color: var(--text-color);
     flex-direction: column;
     align-content: center;
     justify-content: center;
@@ -26,6 +34,11 @@ main button {
     height: 90px;
     margin: 0 1px;
     font-size: larger;
+    border: 10px outset var(--secondary-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    cursor: pointer;
+
 }
 
 main {
@@ -46,7 +59,7 @@ main, header {
     letter-spacing: 4px;
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid var(--secondary-color);
     height: 70px;
     padding-left: 10px;
 }
@@ -63,6 +76,7 @@ main, header {
     main button {
         width: 60px;
         height: 60px;
+        border: 7px outset #282a36;
     }
 }
 
