@@ -25,14 +25,18 @@ body {
     font-size: 18px;
 }
 
-#clear {
+#remove {
+    display: flex;
+}
+
+#clear, #del {
     flex: 1 1 0;
 }
 
 main button {
     width: 90px;
     height: 90px;
-    margin: 0 1px;
+    margin: 4px 1px;
     font-size: larger;
     border: 10px outset var(--secondary-color);
     background-color: var(--background-color);
@@ -76,7 +80,7 @@ main, header {
     main button {
         width: 60px;
         height: 60px;
-        border: 7px outset #282a36;
+        border: 7px outset var(--secondary-color);
     }
 }
 

@@ -123,3 +123,18 @@ clear.addEventListener("click", () => {
     display.textContent = "";
     decimal.disabled = false;
 });
+
+let delBtn = document.querySelector("#del");
+
+delBtn.addEventListener("click", () => {
+    if (operator === "") {
+        let newNum1 = num1.split("").slice(0, -1);
+        num1 = newNum1.join("");
+        display.textContent = num1 || "";
+    } else {
+        decimal.disabled = false;
+        let newNum2 = num2.split("").slice(0, -1);
+        num2 = newNum2.join("");
+        display.textContent = num2 || "";
+    }
+});
