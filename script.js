@@ -126,6 +126,7 @@ clear.addEventListener("click", () => {
 
 let delBtn = document.querySelector("#del");
 
+// delete last number or clear calculator
 delBtn.addEventListener("click", () => {
     if (operator === "") {
         let newNum1 = num1.split("").slice(0, -1);
