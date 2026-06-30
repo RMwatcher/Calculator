@@ -42,7 +42,15 @@ main button {
     background-color: var(--background-color);
     color: var(--text-color);
     cursor: pointer;
+}
 
+main button:hover {
+    color: var(--secondary-color);
+    background-color: var(--text-color);
+}
+
+main button:active {
+    background-color: chartreuse;
 }
 
 main {
