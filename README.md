@@ -24,3 +24,7 @@ To help meet these goals, this project use the following languages and other pro
 ### Note
 
 This project was created with minimal use of AI, using it only for troubleshooting. Everything else was made by hand with some help from Google.
+
+Here is a image of the calculator as it appears on the internet:
+
+<img width="783" height="903" alt="calculator as appeared on the internet" src="https://github.com/user-attachments/assets/e115436f-da4f-49df-83cb-07d661c6f941" />
