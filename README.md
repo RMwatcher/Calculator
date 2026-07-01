@@ -7,7 +7,7 @@ As part of [The Odin Project](https://www.theodinproject.com/) curriculum, this 
 * multiplication
 * division
 
-Other operations include using decimals in your equation, a clear, and delete button. As name suggest, the clear button let's you reset calculator back to zero including operator. Delete button is similar to the clear button excepts it'll remove the last number on screen. Plans to add keyboard support in future builds.
+Other operations include using decimals in your equation, a clear, and delete button. As name suggest, the clear button let's you reset calculator back to zero including operator. Delete button is similar to the clear button excepts it'll remove the last number on screen. Hovering over and clicking each button will change their colors. Plans to add keyboard support in future builds.
 
 ## Features
 
